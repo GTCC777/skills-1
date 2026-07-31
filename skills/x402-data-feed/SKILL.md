@@ -117,7 +117,7 @@ Any x402-payable endpoint works. The [PulseNetwork catalog](https://pulse.theasl
 
 ## Hummingbot v2.16
 
-- **Compatibility:** verified against the `v2.16.0` tag — `X402APIDataFeed` uses the same core imports as the stock `CustomAPIDataFeed` that ships in 2.16 (`hummingbot.core.network_base`, `hummingbot.core.network_iterator`), so it drops in unchanged.
+- **Compatibility:** verified against the `v2.16.0` tag — `X402APIDataFeed` uses the same core imports as the stock `CustomAPIDataFeed` that ships in 2.16 (`hummingbot.core.network_base`, `hummingbot.core.network_iterator`), so it should drop in unchanged.
 - **hbot CLI:** the new non-interactive CLI pairs naturally with pay-per-call feeds — start a strategy headless from CI or cron (`hbot start --script x402_funding_signal_example.py`, then `hbot status --json`); the bot only spends while it runs, and `max_price_usdc` bounds the worst case.
 - **Robinhood Chain:** v2.16 adds Robinhood Chain to Gateway (Uniswap AMM & CLMM on mainnet), where most tokens are fresh launchpad launches. A runnable pre-trade safety-gate example ships with the component — it pays $0.015 for a deterministic CLEAR / CAUTION / AVOID verdict (sell-simulation honeypot, taxes, owner privileges, LP lock, holder concentration) and keeps the gate closed on anything but CLEAR:
 
